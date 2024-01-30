@@ -17,10 +17,12 @@ class QuizBrain:
     def next_question(self):
         msg = f"Q.{self.current_question_number + 1}: {self.current_question.text} (True/False)?:"
         self.current_question_number += 1
-        return input(msg)
+        user_response = input(msg).lower()
+        while user_response not in ["true", "false"]:
+            user_response = input("Invalid input: please enter true or false.")
 
     def check_if_answer_correct(self, answer):
-        is_correct = answer == self.current_question.answer
+        is_correct = answer == self.current_question.answer.lower()
         if is_correct:
             self.score["right"] += 1
             print("You are correct!")
@@ -30,7 +32,7 @@ class QuizBrain:
         return is_correct
 
     def print_score(self):
-        print(f"You have {self.score['right']} correct, and {self.score['wrong']} incorrect.")
+        print(f"You have {self.score['right']}/{self.current_question_number} correct.\n")
 
     def end_game(self):
         print(f"Game is over!")

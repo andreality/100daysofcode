@@ -1,6 +1,6 @@
 from turtle import Turtle, Screen
 from colour import Color
-
+from turtleart.common import draw_shape, get_colour_list
 
 timmy = Turtle()
 # timmy.shape("turtle")
@@ -21,15 +21,9 @@ colors1 = list(blue.range_to(pink, 13))
 colors2 = list(pink.range_to(red, 12))
 # colors = colors1 + colors2
 colors = list(pink.range_to(red, 25))
+colors = get_colour_list(first_colour="pink", second_colour="firebrick", num_colours)
 
 
-def draw_shape(turtle, num_sides, side_length):
-    angle = 360 / num_sides
-    turtle.begin_fill()
-    for _ in range(0, num_sides):
-        turtle.forward(side_length)
-        turtle.left(angle)
-    turtle.end_fill()
 
 
 timmy.width(2)

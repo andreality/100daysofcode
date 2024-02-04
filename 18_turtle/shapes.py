@@ -3,28 +3,9 @@ from colour import Color
 from turtleart.common import draw_shape, get_colour_list
 
 timmy = Turtle()
-# timmy.shape("turtle")
-# timmy.color("palegreen4")
-# draw_square(turtle)
+timmy.speed("fastest")
 
-# def draw_dashed_line(turtle, num_steps=15, dash_length=10):
-#     for _ in range(0, num_steps):
-#         turtle.forward(dash_length)
-#         turtle.penup()
-#         turtle.forward(dash_length)
-#         turtle.pendown()
-
-blue = Color("aquamarine")
-pink = Color("pink")
-red = Color("firebrick")
-colors1 = list(blue.range_to(pink, 13))
-colors2 = list(pink.range_to(red, 12))
-# colors = colors1 + colors2
-colors = list(pink.range_to(red, 25))
-colors = get_colour_list(first_colour="pink", second_colour="firebrick", num_colours)
-
-
-
+colors = get_colour_list(first_colour="pink", second_colour="firebrick", num_colours=25)
 
 timmy.width(2)
 timmy.penup()

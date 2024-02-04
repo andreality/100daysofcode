@@ -1,4 +1,4 @@
-import colorgram
+# import colorgram
 import turtle as t
 import random
 from turtleart.common import get_colour_list
@@ -25,11 +25,7 @@ def fill_line():
     for i in range(0, num_dots):
         color = random.choice(color_list).rgb
         timmy.pendown()
-        timmy.pencolor(*color)
-        timmy.fillcolor(*color)
-        timmy.begin_fill()
-        timmy.circle(radius=radius)
-        timmy.end_fill()
+        timmy.dot(20, *color)
         timmy.penup()
         timmy.forward(space)
 

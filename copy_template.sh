@@ -1,0 +1,1 @@
+cp -r 00_template 24_mailmerge

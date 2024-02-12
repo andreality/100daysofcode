@@ -1,1 +1,1 @@
-cp -r 00_template 24_mailmerge
+cp -r 00_template 33_apis

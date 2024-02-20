@@ -3,10 +3,12 @@ import time
 import sqlite3
 from datetime import datetime
 from beepy import beep
+from progressbar import progressbar
 
 target = int(input("Enter target number of reps."))
-min_reps_per_set = 5  # int(input("Enter min reps per set."))
-max_reps_per_set = 15  # int(input("Enter max reps per set."))
+min_reps_per_set = 8  # int(input("Enter min reps per set."))
+max_reps_per_set = 16  # int(input("Enter max reps per set."))
+rest = 60
 
 pushups_list = []
 
@@ -16,7 +18,9 @@ while sum(pushups_list) < target:
     reps = min(reps, remaining)
     reps_done = int(input(f"Target reps for this set is {reps}. How many did you do?"))
     pushups_list.append(reps_done)
-    time.sleep(60)
+    print(f"Total so far: {sum(pushups_list)}")
+    for i in progressbar(range(rest)):
+        time.sleep(rest / 60)
     random_sound_int = random.randint(1, 7)
     beep(random_sound_int)
 

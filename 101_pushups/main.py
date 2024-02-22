@@ -4,6 +4,8 @@ import sqlite3
 from datetime import datetime
 from beepy import beep
 from progressbar import progressbar
+from pixela import add_pixel
+import webbrowser
 
 target = int(input("Enter target number of reps."))
 min_reps_per_set = 8  # int(input("Enter min reps per set."))
@@ -26,8 +28,14 @@ while sum(pushups_list) < target:
     random_sound_int = random.randint(1, 7)
     beep(random_sound_int)
 
-
 print(pushups_list)
+date = datetime.now().strftime("%Y%m%d")
+success = False
+while success is False:
+    response = add_pixel(date, reps=sum(pushups_list))
+    print(response)
+    if response.status_code == 200:
+        success = True
 
 db = sqlite3.connect("pushups.db")
 cursor = db.cursor()
@@ -40,3 +48,4 @@ for i in range(0, len(pushups_list)):
 db.commit()
 cursor.close()
 
+webbrowser.open("https://pixe.la/v1/users/andreality/graphs/pushups.html")

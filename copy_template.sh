@@ -1,1 +1,1 @@
-cp -r 00_template 30_exceptions
+cp -r 00_template 34_quizzler

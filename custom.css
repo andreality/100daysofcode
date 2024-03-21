@@ -1,0 +1,15 @@
+table.dataview.table-view-table {
+	font-size: 0.9em;
+}
+
+table.dataview.table-view-table th {
+    font-size: 1em;
+}
+
+.theme-dark table.dataview.table-view-table tr:nth-child(even) {
+	background: rgba(255,255,255,0.05);
+}
+
+.theme-light table.dataview.table-view-table tr:nth-child(even) {
+	background: rgba(0,0,0,0.05);
+}
